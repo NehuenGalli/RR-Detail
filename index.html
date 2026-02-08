@@ -4,27 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/rrDetailingLogo.jpeg">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/d80690532d.js" crossorigin="anonymous"></script>
-    <title>RRDetail</title>
+    <title>RR Detail</title>
 </head>
 
 <body>
 
+    <a href="https://wa.me/5491132052615?text=Hola,%20quería%20hacer%20una%20consulta" class="btn-wsp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <header>
-        <img src="img/rrDetailingLogo.jpeg" alt="logo-RRDetail" class="logo">
+        <a href="#"><img src="img/rrDetailingLogo.jpeg" alt="logo-RRDetail" class="logo"></a>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
         <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="#" class="nav-link">Inicio</a></li>
-                <li><a href="#" class="nav-link">Servicios</a></li>
-                <li><a href="#" class="nav-link">Trabajos</a></li>
-                <li><a href="#" class="nav-link">Preguntas Frecuentes</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#trabajos" class="nav-link">Trabajos</a></li>
+                <li><a href="#faq" class="nav-link">Preguntas Frecuentes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
+        <!-- Sección de bienvenida -->
 
         <section class="hero">
             <div class="hero-content">
@@ -34,9 +45,11 @@
                     Brindamos servicios profesionales para dejar tu vehículo como nuevo, tanto por dentro como por
                     fuera.
                 </p>
-                <button class="btn-hero">Ver Servicios</button>
+                <a href="#servicios" class="hero-button">Ver Servicios</a>
             </div>
         </section>
+
+        <!-- Sección de por qué elegirnos -->
 
         <section>
             <div class="section-info">
@@ -62,30 +75,30 @@
                 </div>
                 <div class="box">
                     <i class="fa-solid fa-shield"></i>
-                    <h4>Presonalizado</h4>
+                    <h4>Personalizado</h4>
                     <p>Atención personalizada para cada cliente</p>
                 </div>
             </div>
         </section>
 
+        <!-- Sección de servicios -->
 
-        <section class="servicios">
+        <section class="services" id="servicios">
 
-
-            <div class="section-services">
+            <div class="section-title">
                 <h2>Nuestros Servicios</h2>
                 <p>Trabajamos con productos profesionales y dedicación en cada detalle</p>
             </div>
 
 
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-content">
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-card-content">
                         <span></span>
                         <h4>Detailing Exterior</h4>
                         <p>Lavado premium y estética exterior completa</p>
 
-                        <ul class="list-services">
+                        <ul class="service-list">
                             <li><i class="fa-regular fa-circle-check"></i> Lavado premium exterior</li>
                             <li><i class="fa-regular fa-circle-check"></i> Lavado de llantas y pasarruedas</li>
                             <li><i class="fa-regular fa-circle-check"></i> Pulido de carrocería</li>
@@ -95,17 +108,17 @@
                         </ul>
 
                     </div>
-                        <a class="btn-precio">Consultar Precio</a>
+                    <a class="price-button">Consultar Precio</a>
                 </div>
 
 
-                <div class="card">
-                    <div class="card-content">
+                <div class="service-card">
+                    <div class="service-card-content">
                         <span></span>
                         <h4>Detailing Interior</h4>
                         <p>Limpieza profunda del interior de tu vehículo</p>
 
-                        <ul class="lista-servicios">
+                        <ul class="service-list">
                             <li><i class="fa-regular fa-circle-check"></i> Limpieza profunda de tapizados</li>
                             <li><i class="fa-regular fa-circle-check"></i> Lavado de techos</li>
                             <li><i class="fa-regular fa-circle-check"></i> Limpieza y nutrición de plásticos</li>
@@ -115,16 +128,16 @@
                         </ul>
 
                     </div>
-                        <a class="btn-precio">Consultar Precio</a>
+                    <a class="price-button">Consultar Precio</a>
                 </div>
 
-                <div class="card">
-                    <div class="card-content">
+                <div class="service-card">
+                    <div class="service-card-content">
                         <span></span>
                         <h4>Servicio Completo</h4>
                         <p>Detailing interior + exterior</p>
 
-                        <ul class="lista-servicios">
+                        <ul class="service-list">
                             <li><i class="fa-regular fa-circle-check"></i> Detailing interior + exterior</li>
                             <li><i class="fa-regular fa-circle-check"></i> Limpieza integral del vehículo</li>
                             <li><i class="fa-regular fa-circle-check"></i> Puestas a punto estéticas</li>
@@ -132,31 +145,195 @@
                         </ul>
 
                     </div>
-                        <a class="btn-precio">Consultar Precio</a>
+                    <a class="price-button">Consultar Precio</a>
                 </div>
             </div>
         </section>
 
-        <section class="trabajos">
-            <h2>Trabajos Realizados</h2>
-            <p>Resultados que hablan por si solos</p>
+        <!-- Seccion trabajos realizados -->
 
-            <!-- Hacer una galeria-->
-
+        <section class="trabajos-section" id="trabajos">
             <div class="trabajos-container">
-                <div class="img-container">
-                    <img src="" alt="">
+                <div class="section-info">
+                    <h2>Trabajos Realizados</h2>
+                    <p>Resultados que hablan por si solos</p>
+                </div>
+
+                <div class="trabajos-cards-container">
+                    <div class="trabajo-card">
+                        <div class="slider-container">
+                            <div class="slide active fade">
+                                <span class="etiqueta-estado">Antes</span>
+                                <img src="img/demo.jpeg" alt="Antes">
+                            </div>
+                            <div class="slide fade">
+                                <span class="etiqueta-estado despues">Después</span>
+                                <img src="img/demo.jpeg" alt="Despues">
+                            </div>
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+                        <div class="trabajo-info">
+                            <h4>Abrillantado</h4>
+                            <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                                laudantium!
+                                Illo in architecto consectetur velit, molestiae tempore, odio recusandae fugiat
+                                incidunt,
+                                corporis nisi ab minima? Sunt omnis tempore necessitatibus illum.</p>
+                        </div>
+                    </div>
+
+                    <div class="trabajo-card invertido">
+                        <div class="slider-container">
+                            <div class="slide active fade">
+                                <span class="etiqueta-estado">Antes</span>
+                                <img src="img/demo.jpeg" alt="Antes">
+                            </div>
+                            <div class="slide active fade">
+                                <span class="etiqueta-estado">Antes 2</span>
+                                <img src="img/demo.jpeg" alt="Antes">
+                            </div>
+                            <div class="slide fade">
+                                <span class="etiqueta-estado despues">Después</span>
+                                <img src="img/demo.jpeg" alt="Despues">
+                            </div>
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+                        <div class="trabajo-info">
+                            <h4>Detailing Exterior</h4>
+                            <p class="descripcion">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+                                ipsam, corporis nobis, blanditiis, voluptatem magni deserunt dolorum aliquam illum nemo
+                                expedita iste asperiores natus minus exercitationem maxime cum veniam animi.</p>
+                        </div>
+                    </div>
+
+                    <div class="trabajo-card">
+                        <div class="slider-container">
+                            <div class="slide active fade">
+                                <span class="etiqueta-estado">Antes</span>
+                                <img src="img/demo.jpeg" alt="Antes">
+                            </div>
+                            <div class="slide fade">
+                                <span class="etiqueta-estado despues">Después</span>
+                                <img src="img/demo.jpeg" alt="Despues">
+                            </div>
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+                        <div class="trabajo-info">
+                            <h4>Pulido de Ópticas</h4>
+                            <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                                corporis ratione molestiae. Rem
+                                animi perspiciatis voluptas reprehenderit aliquid, deserunt accusamus, iste eaque illo
+                                sunt
+                                quia ad, quo ratione adipisci numquam?</p>
+                        </div>
+                    </div>
+
+                    <div class="trabajo-card invertido">
+                        <div class="slider-container">
+                            <div class="slide active fade">
+                                <span class="etiqueta-estado">Antes</span>
+                                <img src="img/demo.jpeg" alt="Antes">
+                            </div>
+                            <div class="slide fade">
+                                <span class="etiqueta-estado despues">Después</span>
+                                <img src="img/demo.jpeg" alt="Despues">
+                            </div>
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+                        </div>
+                        <div class="trabajo-info">
+                            <h4>Detailing Interior</h4>
+                            <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iste
+                                commodi porro sit,
+                                voluptatum, ut impedit odit autem assumenda repudiandae sint dicta illum, ab similique
+                                mollitia delectus doloribus reiciendis cupiditate!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </section>
 
+        <!-- Sección de preguntas frecuentes -->
 
-        <section class="preguntas-frecuentes">
-            <h2>Preguntas Frecuentes</h2>
-            <p>Respuestas a las dudas más comunes</p>
+        <section class="faq" id="faq">
+            <div class="faq-inner">
+                <div class="section-title">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Respuestas a las dudas más comunes sobre nuestros servicios</p>
+                </div>
 
 
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Necesito reservar turno previamente?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, trabajamos exclusivamente con turno previo para poder dedicarle el tiempo necesario a
+                            cada vehículo sin apuros. Podés reservar tu lugar directamente por WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Dónde están ubicados?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Estamos en Berazategui. Al confirmar tu turno por WhatsApp te enviamos la ubicación
+                            exacta para que llegues con GPS.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Con qué frecuencia debo realizar un detallado interior?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La frecuencia recomendada depende del uso y el estado del vehículo. Por lo general, se
+                            realiza cada 6 meses a 1 año para mantener un interior impecable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿El servicio de detallado interior elimina las manchas de los asientos?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, nuestro servicio de detallado interior incluye la eliminación de manchas de los asientos
+                            y otras superficies interiores.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿El detallado interior incluye la limpieza del techo interior y alfombras?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, nuestro servicio abarca la limpieza completa del interior, incluyendo el techo interior,
+                            alfombras y todas las superficies interiores.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Cuál es la diferencia entre un lavado común y un Detailing?
+                        <i class="fa-solid fa-plus icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Un lavado común es superficial y rápido. En RR Detail, realizamos una limpieza profunda y
+                            corrección estética. No solo lavamos, sino que descontaminamos la pintura, nutrimos
+                            plásticos, limpiamos tapizados a fondo y protegemos el vehículo con ceras o selladores
+                            profesionales.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -164,36 +341,53 @@
     <footer>
         <div class="footer-container">
 
-            <img src="" alt="">
-            <p>Estética vehicular profesional en Berazategui. Cuidado y dedicación en cada detalle.</p>
-
-            <div class="services-list">
-                <h4>Servicios</h4>
-                <p>Detailing exterior</p>
-                <p>Detailing interior</p>
-                <p>Pulido de carrocería</p>
-                <p>Limpieza de tapizados</p>
-                <p>Encerado protector</p>
+            <div class="footer-info">
+                <img src="img/rrDetailingLogo.jpeg" alt="logo-RRDetail" class="logo">
+                <p>Estética vehicular profesional en Berazategui. Cuidado y dedicación en cada detalle.</p>
             </div>
 
-            <div class="contacto">
-                <h4>Contacto</h4>
-                <p><span class="icon-phone"></span>11 2345-6789</p>
-                <p><span class="icon-ubication"></span>Berazategui, Buenos Aires</p>
+            <div class="footer-lists">
+
+                <div class="footer-services">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li>Detailing exterior</li>
+                        <li>Detailing interior</li>
+                        <li>Pulido de carrocería</li>
+                        <li>Limpieza de tapizados</li>
+                        <li>Encerado protector</li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-items">
+                        <p><i class="fa-solid fa-phone"></i>11 2345-6789</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Berazategui, Buenos Aires</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links-items">
+                        <a target="_blank" href="https://www.instagram.com/rr_detail_/">
+                            <i class="fa-brands fa-instagram"></i>@rr_detail_</a>
+                        <a target="_blank" href="https://www.instagram.com/celemolina03/">
+                            <i class="fa-brands fa-instagram"></i>@celemolina03</a>
+                        <a target="_blank" href="https://www.instagram.com/r0man_rodrig0/">
+                            <i class="fa-brands fa-instagram"></i>@r0man_rodrig0</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="redes-sociales">
-                <a href="#"><span class="icon-instagram"></span>@rr_detail_</a>
-                <a href="#"><span class="icon-instagram"></span>@celemolina03</a>
-                <a href="#"><span class="icon-instagram"></span>@r0man_rodrig0</a>
-            </div>
-
-            <div class="derechos">
-                <p>&copy; 2026 RRDetail - Estética Vehicular. Todos los derechos reservados.</p>
-            </div>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 RRDetail - Estética Vehicular. Todos los derechos reservados.</p>
         </div>
     </footer>
 
 </body>
+
+<script src="script.js"></script>
 
 </html>
