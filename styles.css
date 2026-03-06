@@ -38,8 +38,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Estilos para el botón de WhatsApp */
-
 .btn-wsp {
     position: fixed;
     bottom: 50px;
@@ -74,15 +72,14 @@ html {
     }
 }
 
-/* Estilos para el header y la navegación */
-
 header {
     background-color: var(--primary-color);
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
+    gap: 50%;
     width: 100%;
     z-index: 1000;
     padding: 0 2rem;
@@ -124,10 +121,19 @@ header {
     margin-left: auto;
 }
 
-/* --- RESPONSIVE (MÓVIL) --- */
+/* --- Responsive --- */
+
+@media (max-width: 1200px) {
+    header {
+        gap: 20%;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         padding: 0 1.5rem;
+        justify-content: space-between;
+        gap: 0;
     }
 
     .menu-toggle {
@@ -157,8 +163,18 @@ header {
     }
 }
 
+/* Sección Hero */
 
-/* Estilos para el Hero Section */
+@keyframes aparecerHaciaArriba {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/Hero.webp');
@@ -186,6 +202,8 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.1;
+    opacity: 0; 
+    animation: aparecerHaciaArriba 1s ease-out forwards;
 }
 
 .hero-content p {
@@ -194,6 +212,8 @@ header {
     color: white;
     line-height: 1.2;
     max-width: 600px;
+    opacity: 0;
+    animation: aparecerHaciaArriba 1s ease-out 0.3s forwards;
 }
 
 .hero-button {
@@ -207,6 +227,8 @@ header {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: aparecerHaciaArriba 1s ease-out 0.6s forwards;
 }
 
 .hero-button:hover {
@@ -214,7 +236,8 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* --- RESPONSIVE DEL HERO --- */
+/* Responsive */
+
 @media (max-width: 768px) {
     .hero {
         padding-left: 0;
@@ -246,7 +269,6 @@ header {
 }
 
 /* Sección "Por qué elegirnos" */
-
 
 .section-info {
     text-align: center;
@@ -308,7 +330,8 @@ header {
     transform: translateY(-5px);
 }
 
-/* --- RESPONSIVE PARA "POR QUÉ ELEGIRNOS" --- */
+/* Responsive */
+
 @media (max-width: 768px) {
 
     .section-info h2 {
@@ -330,7 +353,7 @@ header {
     }
 }
 
-/* Sección de Servicios */
+/* Sección Servicios */
 
 .services {
     margin-top: 4rem;
@@ -430,7 +453,8 @@ header {
     width: auto;
 }
 
-/* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
+/* Responsive */
+
 @media (max-width: 768px) {
 
     .section-title h2 {
@@ -451,8 +475,8 @@ header {
     }
 }
 
+/* Sección FAQ */
 
-/* -- ESTILOS SECCION FAQ -- */
 .faq {
     padding: 2rem 2rem;
 }
@@ -507,7 +531,7 @@ header {
     font-size: 0.95rem;
 }
 
-/* --- CLASE ACTIVA --- */
+/* Clase activa */
 
 .faq-item.active .faq-answer {
     max-height: 300px;
@@ -521,7 +545,7 @@ header {
     color: var(--secondary-color);
 }
 
-/* --- VERSIÓN RESPONSIVE FAQ --- */
+/* Responsive */
 
 @media (max-width: 768px) {
     .section-title h2 {
@@ -533,8 +557,7 @@ header {
     }
 }
 
-
-/* -- ESTILOS PARA EL FOOTER -- */
+/* Footer*/
 
 footer {
     margin-top: 5rem;
@@ -586,7 +609,6 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* Estilos de Listas y Enlaces */
 .footer-services ul {
     list-style: none;
     padding: 0;
@@ -645,7 +667,7 @@ h3 {
     font-size: 0.85rem;
 }
 
-/* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
+/* Responsive */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -674,7 +696,7 @@ h3 {
     }
 }
 
-/* --- ESTILOS TRABAJOS REALIZADOS --- */
+/* Sección Trabajos */
 
 .trabajos-cards-container {
     padding: 2rem 2rem;
@@ -804,7 +826,8 @@ h3 {
     margin-bottom: 2rem;
 }
 
-/* RESPONSIVE */
+/* Responsive */
+
 @media (max-width: 768px) {
 
     .trabajo-card,
@@ -836,4 +859,15 @@ h3 {
     color: white !important;
     text-decoration: none;
     font-style: normal;
+}
+
+.oculto {
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: all 0.8s ease-out; 
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0); 
 }

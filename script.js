@@ -4,13 +4,9 @@ const navLinksItems = document.querySelectorAll('.nav-link');
 const faqItems = document.querySelectorAll('.faq-item');
 
 
-// Toggle del menú de navegación
-
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
-
-// Cerrar el menú al hacer clic en un enlace
 
 navLinksItems.forEach(link => {
     link.addEventListener('click', () => {
@@ -18,7 +14,6 @@ navLinksItems.forEach(link => {
     });
 });
 
-// Toggle de preguntas frecuentes
 
 faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
@@ -26,8 +21,6 @@ faqItems.forEach(item => {
         item.classList.toggle('active');
     });
 });
-
-// Slider de imágenes 
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -75,3 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }, randomTime);
     });
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('mostrar');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+const elementosOcultos = document.querySelectorAll('.oculto');
+elementosOcultos.forEach(el => observer.observe(el));
