@@ -21,16 +21,16 @@ section {
 }
 
 #trabajos {
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 80px;
 }
 
 #faq {
-    scroll-margin-top: 170px; 
+    scroll-margin-top: 170px;
 }
 
 @media (max-width: 768px) {
     #faq {
-        scroll-margin-top: 100px; 
+        scroll-margin-top: 100px;
     }
 }
 
@@ -40,35 +40,67 @@ html {
 
 .btn-wsp {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 40px;
+    right: 40px;
     color: white;
-    background-color: #21bd5a;
+    background-color: #25D366;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
     text-decoration: none;
+    animation: pulse-wsp 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse-wsp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 .btn-wsp:hover {
-    background: #1aa14e;
+    background-color: #128C7E;
     transform: scale(1.1);
+    animation: none;
+    box-shadow: 0px 6px 20px rgba(18, 140, 126, 0.6);
 }
 
 @media (max-width: 768px) {
     .btn-wsp {
         width: 60px;
         height: 60px;
-        font-size: 30px;
-        bottom: 60px;
-        right: 30px;
+        font-size: 35px;
+        bottom: 25px;
+        right: 20px;
+        animation: pulse-wsp-mobile 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+}
+
+@keyframes pulse-wsp-mobile {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
 
@@ -170,6 +202,7 @@ header {
         opacity: 0;
         transform: translateY(40px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -202,7 +235,7 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.1;
-    opacity: 0; 
+    opacity: 0;
     animation: aparecerHaciaArriba 1s ease-out forwards;
 }
 
@@ -475,6 +508,7 @@ header {
     }
 }
 
+
 /* Sección FAQ */
 
 .faq {
@@ -554,6 +588,12 @@ header {
 
     .faq-question {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.8rem;
     }
 }
 
@@ -840,10 +880,20 @@ h3 {
         border-top: 4px solid var(--secondary-color);
     }
 
+    .trabajo-info h3 {
+        font-size: 1.7rem;
+    }
+
     .slider-container {
         width: 100%;
-        height: 250px; 
-        min-height: 250px;
+        height: 250px;
+        min-height: 300px;
+        max-height: 300px;
+    }
+
+    .slide {
+        height: 100%;
+        width: 100%;
     }
 
     .slide img {
@@ -854,7 +904,7 @@ h3 {
 }
 
 
-.footer-contact a, 
+.footer-contact a,
 .footer-contact a[href^="tel:"] {
     color: white !important;
     text-decoration: none;
@@ -863,11 +913,11 @@ h3 {
 
 .oculto {
     opacity: 0;
-    transform: translateY(50px); 
-    transition: all 0.8s ease-out; 
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
 .mostrar {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
