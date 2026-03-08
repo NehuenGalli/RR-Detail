@@ -4,8 +4,15 @@ const navLinksItems = document.querySelectorAll('.nav-link');
 const faqItems = document.querySelectorAll('.faq-item');
 
 
-menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     navLinks.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
 });
 
 navLinksItems.forEach(link => {
@@ -81,3 +88,22 @@ const observer = new IntersectionObserver((entries) => {
 
 const elementosOcultos = document.querySelectorAll('.oculto');
 elementosOcultos.forEach(el => observer.observe(el));
+
+document.addEventListener('DOMContentLoaded', () => {
+    const priceButtons = document.querySelectorAll('.price-button');
+
+    priceButtons.forEach(button => {
+        const cardContainer = button.closest('.service-card');
+        if (cardContainer) {
+            const cardTitle = cardContainer.querySelector('h3');
+            if (cardTitle) {
+                const titleText = cardTitle.textContent.trim();
+                const message = `Hola, me gustaría consultar el precio para el servicio de "${titleText}".`;
+                const whatsappUrl = `https://wa.me/5491123924862?text=${encodeURIComponent(message)}`;
+
+                button.href = whatsappUrl;
+                button.target = '_blank';
+            }
+        }
+    });
+});
